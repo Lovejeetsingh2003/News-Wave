@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:news_wave/view/splash/splash_screen.dart';
 
+import 'config/routes/routes.dart';
+import 'config/routes/routes_name.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,11 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const SplashScreen(),
+      initialRoute: RoutesName.splash,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }

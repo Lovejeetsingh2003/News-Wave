@@ -1,17 +1,34 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:news_wave/config/components/button_widget.dart';
-import 'package:news_wave/config/components/icon_widget.dart';
-import 'package:news_wave/config/components/image_widget.dart';
-import 'package:news_wave/config/components/loading_widget.dart';
+import 'package:news_wave/config/components/image_from_asset_widget.dart';
+import 'package:news_wave/services/splash/splash_services.dart';
 
-class SplashScreen extends StatelessWidget {
+import '../../config/colors/colors_class.dart';
+
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+ final SplashServices services = SplashServices();
+  @override
+  void initState() {
+    super.initState();
+    services.goToHomeScreen(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ButtonWidget(bgColor: Colors.white, onPress: (){}, title: "dfghj",textColor: Colors.black,),
+    return Scaffold(
+      body: Center(
+        child:
+        ImageFromAssetWidget(img: 'assets/images/logo.png', height: 200, width: 200),
+      ),
     );
   }
 }
+
+
+
