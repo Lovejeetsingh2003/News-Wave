@@ -18,6 +18,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
     return GestureDetector(
       onTap: widget.onPress,
       child: Container(
+        width: MediaQuery.of(context).size.width/1.5,
         decoration: BoxDecoration(
           color: widget.bgColor, // Button color
           borderRadius: BorderRadius.circular(10), // Rounded corners
@@ -25,13 +26,15 @@ class _ButtonWidgetState extends State<ButtonWidget> {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Text(
           widget.title,
+          textAlign: TextAlign.center,
           style: TextStyle(
               decoration: TextDecoration.none,
-              color: widget.textColor
+              color: widget.textColor,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
           ),
         ),
-      )
-
+      ),
     );
   }
 }

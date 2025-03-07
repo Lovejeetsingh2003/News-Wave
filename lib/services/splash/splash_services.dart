@@ -6,7 +6,7 @@ class SplashServices{
   void goToHomeScreen(BuildContext context){
     Timer(
       const Duration(seconds: 2),
-          () => Navigator.pushNamedAndRemoveUntil(context, RoutesName.home, (route) => true),
+          () => Navigator.pushNamedAndRemoveUntil(context, RoutesName.login, (route) => true),
     );
   }
 }
