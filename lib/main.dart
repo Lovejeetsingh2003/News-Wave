@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_wave/view/splash/splash_screen.dart';
-
+import 'package:news_wave/config/themes/theme.dart';
 import 'config/routes/routes.dart';
 import 'config/routes/routes_name.dart';
 
@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      themeMode: ThemeMode.light, // Setting theme mode to dark
+      theme: lightTheme, // Setting light theme
+      darkTheme: darkTheme,
       initialRoute: RoutesName.splash,
       onGenerateRoute: Routes.generateRoute,
     );

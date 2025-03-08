@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_wave/config/routes/routes_name.dart';
-import 'package:news_wave/view/home/home_screen.dart';
-import 'package:news_wave/view/splash/splash_screen.dart';
-
-import '../../view/login/login_screen.dart';
-
+import 'package:news_wave/view/view.dart';
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {

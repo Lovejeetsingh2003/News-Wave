@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-class TextWidget extends StatelessWidget {
+class TextWidget extends StatefulWidget {
   final String text;
-  const TextWidget({required this.text,super.key});
+  final TextStyle style;
+  const TextWidget({required this.style,required this.text,super.key});
+  @override
+  State<TextWidget> createState() => _TextWidgetState();
+}
 
+class _TextWidgetState extends State<TextWidget> {
   @override
   Widget build(BuildContext context) {
-    return Text(text);
+    return Text(widget.text,
+    style:widget.style ,);
   }
 }
